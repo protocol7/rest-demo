@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.protocol7.demo.rest</groupId>
+	<artifactId>rest-server</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.0.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+            <groupId>se.vgregion.daoframework</groupId>
+            <artifactId>dao-framework</artifactId>
+            <version>3.2-SNAPSHOT</version>
+		</dependency>
+
+	</dependencies>
+
+	<repositories>
+    	<repository>
+    	    <!-- Used for dao-framework as long as we use a snapshot -->
+    		<id>sonatype</id>
+    		<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    		<releases>
+    			<enabled>false</enabled>
+    		</releases>
+    		<snapshots>
+    			<enabled>true</enabled>
+    		</snapshots>
+    	</repository>
+	</repositories>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.8</version>
+				<configuration>
+					<contextPath>/</contextPath>
+					<scanIntervalSeconds>5</scanIntervalSeconds>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
